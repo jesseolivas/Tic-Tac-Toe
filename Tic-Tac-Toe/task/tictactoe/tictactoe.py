@@ -10,9 +10,11 @@ counto = 0
 counts = 0
 countc = 0
 
-if (cells[0] and cells[1] and cells[2] == "X") or (cells[2] and cells[4] and cells[6] == "X"):
+if cells[0] == "X" and cells[1] == "X" and cells[2] == "X":
     print("X wins")
-elif cells[2] and cells[5] and cells[8] == "O":
+elif cells[2] == "X" and cells[4] == "X" and cells[6] == "X":
+    print("X wins")
+elif cells[2] == "O" and cells[5] == "O" and cells[8] == "O":
     print("O wins")
 else:
     while countc < 9:
@@ -21,9 +23,10 @@ else:
         if cells[countc] == "O":
             counto += 1
         countc += 1
-    if countx + countc == 9:
+    if countx + counto >= 9:
         print("Draw")
-    else:
+    elif countx == 3 and counto == 3:
         print("Game not finished")
-    if (cells[0] and cells[3] and cells[6] == "X") and (cells[1] and cells[4] and cells[7] == "O"):
+
+    else:
         print("Impossible")
